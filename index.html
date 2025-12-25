@@ -7,185 +7,236 @@
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #000814;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-  touch-action: manipulation;
+    background: #000814;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    touch-action: manipulation;
 }
 
-/* MAIN CONTAINER */
+/* ================= CONTAINER ================= */
 .container {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(16px, 4vw, 30px);
-  background:
-    radial-gradient(circle at 20% 80%, rgba(255,20,147,0.1), transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(185,242,255,0.1), transparent 50%);
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255,20,147,0.1), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(185,242,255,0.1), transparent 50%);
 }
 
-/* TITLE */
+/* ================= TITLE ================= */
 .title {
-  text-align: center;
-  color: #ffb6c1;
-  font-size: clamp(1.3rem, 5vw, 1.8rem);
-  font-family: Georgia, serif;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    text-align: center;
+    color: #ffb6c1;
+    font-family: Georgia, serif;
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    z-index: 20;
 }
 
 .subtitle {
-  display: block;
-  color: #b9f2ff;
-  font-size: clamp(0.9rem, 3vw, 1.1rem);
+    display: block;
+    color: #b9f2ff;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    opacity: 0.9;
 }
 
-/* LOVE MESSAGE */
+/* ================= LOVE MESSAGE ================= */
 .love-message {
-  text-align: center;
-  color: #ff69b4;
-  font-family: Georgia, serif;
-  font-size: clamp(1.8rem, 7vw, 3rem);
-  max-width: 800px;
-  line-height: 1.2;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 800px;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: clamp(1.9rem, 7vw, 3.2rem);
+    color: #ff69b4;
+    z-index: 25;
+    padding: 10px;
 }
 
-/* CONTROLS */
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.control-btn {
-  background: rgba(255,182,193,0.2);
-  border: 1px solid rgba(255,182,193,0.3);
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  min-width: 140px;
-  min-height: 44px;
-  cursor: pointer;
-  backdrop-filter: blur(5px);
-}
-
-/* SONG CARD */
+/* ================= WAVE CARD ================= */
 .bad-dancer-container {
-  width: min(90%, 400px);
+    position: absolute;
+    bottom: 140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 400px;
+    z-index: 30;
 }
 
 .wave-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 14px 18px;
-  background: rgba(255,182,193,0.15);
-  border-radius: 12px;
-  border: 1px solid rgba(255,182,193,0.3);
-  cursor: pointer;
-  backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: rgba(255,182,193,0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(255,182,193,0.3);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    animation: glowPulse 3s infinite ease-in-out;
 }
 
+@keyframes glowPulse {
+    0%,100% {
+        box-shadow:
+            0 0 12px rgba(255,105,180,0.35),
+            0 0 24px rgba(185,242,255,0.25);
+    }
+    50% {
+        box-shadow:
+            0 0 22px rgba(255,105,180,0.65),
+            0 0 40px rgba(185,242,255,0.45);
+    }
+}
+
+.wave-card:active {
+    transform: scale(0.97);
+}
+
+/* ================= LOGO ================= */
 .logo {
-  width: 36px;
-  height: 36px;
-  background: #ff69b4;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  border: 2px solid #ffb6c1;
+    width: 36px;
+    height: 36px;
+    background: #ff69b4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffb6c1;
 }
 
 .logo span {
-  color: #fff;
-  font-weight: bold;
+    color: white;
+    font-weight: bold;
 }
 
-/* WAVE */
+/* ================= WAVE ================= */
 .wave {
-  display: flex;
-  gap: 4px;
-  height: 36px;
-  align-items: flex-end;
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 38px;
 }
 
 .bar {
-  width: 4px;
-  background: linear-gradient(to top, #ff69b4, #b9f2ff);
-  border-radius: 2px;
-  animation: pulse 2s infinite ease-in-out;
+    width: 4px;
+    background: linear-gradient(to top, #ff69b4, #b9f2ff);
+    border-radius: 2px;
+    animation: wavePulse 2s infinite ease-in-out;
 }
 
-@keyframes pulse {
-  0%,100% { transform: scaleY(1); }
-  50% { transform: scaleY(1.3); }
+@keyframes wavePulse {
+    0%,100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.3); }
 }
 
-.bar:nth-child(n) { height: calc(10px + (random() * 25px)); }
+.bar:nth-child(1){height:10px}
+.bar:nth-child(2){height:20px}
+.bar:nth-child(3){height:32px}
+.bar:nth-child(4){height:18px}
+.bar:nth-child(5){height:36px}
+.bar:nth-child(6){height:22px}
+.bar:nth-child(7){height:30px}
+.bar:nth-child(8){height:14px}
+.bar:nth-child(9){height:28px}
+.bar:nth-child(10){height:20px}
+.bar:nth-child(11){height:34px}
+.bar:nth-child(12){height:16px}
 
-/* PARTICLES */
+/* ================= CONTROLS ================= */
+.controls {
+    position: absolute;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    z-index: 35;
+}
+
+.control-btn {
+    min-width: 140px;
+    min-height: 44px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,182,193,0.3);
+    background: rgba(255,182,193,0.2);
+    color: white;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.control-btn:active {
+    transform: scale(0.96);
+}
+
+/* ================= PARTICLES ================= */
 .stardust-field {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
 }
 
 .stardust-particle {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  background: white;
-  border-radius: 50%;
-  animation: fall linear infinite;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    border-radius: 50%;
+    animation: fall linear infinite;
 }
 
 @keyframes fall {
-  to { transform: translateY(110vh); }
+    to { transform: translateY(110vh); }
 }
 
-/* HEART */
-.heart-constellation {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-}
-
-.star-node {
-  width: 2px;
-  height: 2px;
-  background: #ff69b4;
-  position: absolute;
-}
-
-.star-connection {
-  position: absolute;
-  height: 1px;
-  background: rgba(255,105,180,0.4);
-  transform-origin: left center;
-}
-
-/* MESSAGE */
+/* ================= HEART & MESSAGE ================= */
+.heart-constellation,
 .cosmic-message {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: #ff69b4;
-  font-family: Georgia, serif;
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  opacity: 0;
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 15;
+}
+
+.cosmic-message {
+    font-family: Georgia, serif;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    color: #ff69b4;
+}
+
+/* ================= MOBILE SAFETY ================= */
+@media (max-height: 700px) {
+    .love-message { top: 40%; }
+    .bad-dancer-container { bottom: 130px; }
+}
+
+@media (max-height: 600px) {
+    .love-message { top: 38%; }
+    .bad-dancer-container { bottom: 120px; }
 }
 </style>
 </head>
@@ -193,34 +244,35 @@ body {
 <body>
 <div class="container">
 
-  <h1 class="title">
+<h1 class="title">
     Merry Christmas Babe ✨
     <span class="subtitle">To the moon ❤️ and back</span>
-  </h1>
+</h1>
 
-  <div class="love-message">I Just Want To Say I Love You</div>
+<div class="love-message">I Just Want To Say I Love You ❤️</div>
 
-  <div class="controls">
+<div class="bad-dancer-container">
+    <div class="wave-card" onclick="openSong()">
+        <div class="logo"><span>▶</span></div>
+        <div class="wave">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+    </div>
+</div>
+
+<div class="controls">
     <button class="control-btn" onclick="increaseDust()">More Stardust ✨</button>
     <button class="control-btn" onclick="revealHeart()">Reveal Heart 💖</button>
-  </div>
-
-  <div class="bad-dancer-container">
-    <div class="wave-card" onclick="openSong()">
-      <div class="logo"><span>▶</span></div>
-      <div class="wave">
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      </div>
-    </div>
-  </div>
+</div>
 
 </div>
 
 <div class="stardust-field" id="stardustField"></div>
 <div class="heart-constellation" id="heart"></div>
-<div class="cosmic-message" id="msg">You are my HOME</div>
+<div class="cosmic-message" id="msg">You are my universe</div>
 
 <script>
 const field = document.getElementById("stardustField");
@@ -228,25 +280,25 @@ const heart = document.getElementById("heart");
 const msg = document.getElementById("msg");
 
 function openSong(){
-  window.open("https://www.youtube.com/watch?v=GZFKra1IXvs&t=88s","_blank");
+    window.open("https://www.youtube.com/watch?v=GZFKra1IXvs&t=88s","_blank");
 }
 
 function createDust(){
-  const p=document.createElement("div");
-  p.className="stardust-particle";
-  p.style.left=Math.random()*100+"%";
-  p.style.animationDuration=8+Math.random()*15+"s";
-  field.appendChild(p);
-  setTimeout(()=>p.remove(),25000);
+    const p=document.createElement("div");
+    p.className="stardust-particle";
+    p.style.left=Math.random()*100+"%";
+    p.style.animationDuration=8+Math.random()*15+"s";
+    field.appendChild(p);
+    setTimeout(()=>p.remove(),25000);
 }
 
 function increaseDust(){
-  for(let i=0;i<25;i++) setTimeout(createDust,i*40);
+    for(let i=0;i<25;i++) setTimeout(createDust,i*40);
 }
 
 function revealHeart(){
-  heart.style.opacity=1;
-  msg.style.opacity=1;
+    heart.style.opacity=1;
+    msg.style.opacity=1;
 }
 
 for(let i=0;i<80;i++) setTimeout(createDust,i*100);
