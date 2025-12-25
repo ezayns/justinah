@@ -2,16 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="description" content="Stardust Snow - A cosmic interactive experience with love message and music">
-    <meta name="keywords" content="stardust, snow, cosmic, love, animation, interactive, particles">
-    <meta property="og:title" content="Stardust Snow - Cosmic Love Experience">
-    <meta property="og:description" content="Interactive cosmic particles forming constellations with love message">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&h=630&q=80">
-    <meta property="og:url" content="https://your-deployed-url.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>✨ Stardust Snow | Cosmic Love Experience</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stardust Snow ✨</title>
     <style>
         * {
             margin: 0;
@@ -19,21 +11,12 @@
             box-sizing: border-box;
         }
         
-        :root {
-            --pink: #ff69b4;
-            --light-pink: #ffb6c1;
-            --blue: #b9f2ff;
-            --dark-bg: #000814;
-            --card-bg: rgba(255, 182, 193, 0.15);
-        }
-        
         body {
-            background: var(--dark-bg);
+            background: #000814;
             min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Arial', sans-serif;
             overflow: hidden;
             touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
         }
         
         .container {
@@ -42,67 +25,47 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            height: -webkit-fill-available;
             background: 
                 radial-gradient(circle at 20% 80%, rgba(255, 20, 147, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(185, 242, 255, 0.1) 0%, transparent 50%);
-            overflow: hidden;
-            padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
-            padding-left: env(safe-area-inset-left);
-            padding-right: env(safe-area-inset-right);
         }
         
-        /* TITLE */
+        /* TITLE - Simple and clean */
         .title {
             position: absolute;
-            top: max(20px, 5vh);
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--light-pink);
-            font-size: clamp(1.3rem, 5vw, 2.2rem);
-            text-shadow: 
-                0 0 10px var(--pink),
-                0 0 20px var(--blue);
-            z-index: 20;
+            color: #ffb6c1;
+            font-size: clamp(1.3rem, 5vw, 1.8rem);
+            z-index: 10;
             text-align: center;
             width: 90%;
-            max-width: 800px;
-            font-family: 'Courier New', monospace;
+            font-family: 'Georgia', serif;
             line-height: 1.3;
-            padding: 0 10px;
         }
         
         .subtitle {
-            color: var(--blue);
-            font-size: clamp(0.75rem, 2.5vw, 1rem);
-            margin-top: 8px;
-            opacity: 0.8;
+            color: #b9f2ff;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            margin-top: 5px;
+            opacity: 0.9;
             display: block;
         }
         
-        /* LOVE MESSAGE */
+        /* LOVE MESSAGE - Simple and visible */
         .love-message {
             position: absolute;
-            top: clamp(100px, 22vh, 150px);
+            top: 20%;
             left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: clamp(1.8rem, 7vw, 3.5rem);
+            transform: translate(-50%, -50%);
+            color: #ff69b4;
+            font-size: clamp(2rem, 8vw, 3.5rem);
             text-align: center;
             z-index: 15;
             font-family: 'Georgia', serif;
             font-weight: normal;
-            text-shadow: 
-                0 0 15px var(--pink),
-                0 0 30px var(--pink),
-                0 0 45px var(--blue);
-            animation: loveGlow 3s infinite alternate;
-            background: linear-gradient(45deg, var(--light-pink), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            padding: clamp(10px, 2vw, 20px);
+            padding: 20px;
             width: 95%;
             max-width: 800px;
             opacity: 0.95;
@@ -110,62 +73,47 @@
             word-wrap: break-word;
         }
         
-        @keyframes loveGlow {
-            0% { transform: translateX(-50%) scale(1); }
-            100% { transform: translateX(-50%) scale(1.02); }
-        }
-        
-        /* BAD DANCER CARD */
+        /* BAD DANCER CARD - Simple and cute */
         .bad-dancer-container {
             position: absolute;
-            bottom: clamp(120px, 25vh, 140px);
+            bottom: 150px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 20;
             width: 90%;
-            max-width: 500px;
-            min-width: 280px;
+            max-width: 400px;
         }
         
         .wave-card {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: clamp(12px, 3vw, 18px);
-            padding: clamp(12px, 3vw, 16px) clamp(16px, 3vw, 24px);
-            background: var(--card-bg);
-            border-radius: 14px;
-            box-shadow: 
-                0 4px 12px rgba(0,0,0,0.3),
-                0 0 20px rgba(255, 105, 180, 0.4);
+            gap: 15px;
+            padding: 15px 20px;
+            background: rgba(255, 182, 193, 0.15);
+            border-radius: 12px;
             cursor: pointer;
             border: 1px solid rgba(255, 182, 193, 0.3);
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
             width: 100%;
-            min-height: 60px;
         }
         
         .wave-card:active {
             transform: translateY(-2px) scale(0.98);
             background: rgba(255, 182, 193, 0.25);
-            box-shadow: 
-                0 8px 24px rgba(0,0,0,0.4),
-                0 0 30px rgba(255, 105, 180, 0.6);
         }
         
         /* LOGO */
         .logo {
             width: 36px;
             height: 36px;
-            background: black;
+            background: #ff69b4;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid var(--pink);
-            box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
-            flex-shrink: 0;
+            border: 2px solid #ffb6c1;
         }
         
         .logo span {
@@ -177,16 +125,14 @@
         /* WAVE BARS */
         .wave {
             display: flex;
-            gap: 5px;
+            gap: 4px;
             align-items: flex-end;
             height: 40px;
-            flex-grow: 1;
-            justify-content: center;
         }
         
         .bar {
             width: 4px;
-            background: linear-gradient(to top, var(--pink), var(--blue));
+            background: linear-gradient(to top, #ff69b4, #b9f2ff);
             border-radius: 2px;
             animation: wavePulse 2s infinite ease-in-out;
         }
@@ -217,24 +163,11 @@
             .bar {
                 width: 3px;
             }
-            .bar:nth-child(1)  { height: 8px; }
-            .bar:nth-child(2)  { height: 16px; }
-            .bar:nth-child(3)  { height: 26px; }
-            .bar:nth-child(4)  { height: 14px; }
-            .bar:nth-child(5)  { height: 30px; }
-            .bar:nth-child(6)  { height: 18px; }
-            .bar:nth-child(7)  { height: 24px; }
-            .bar:nth-child(8)  { height: 12px; }
-            .bar:nth-child(9)  { height: 22px; }
-            .bar:nth-child(10) { height: 16px; }
-            .bar:nth-child(11) { height: 28px; }
-            .bar:nth-child(12) { height: 14px; }
-            .logo {
-                width: 32px;
-                height: 32px;
+            .wave-card {
+                padding: 12px 16px;
             }
-            .logo span {
-                font-size: 12px;
+            .bad-dancer-container {
+                bottom: 130px;
             }
         }
         
@@ -254,63 +187,23 @@
             to { transform: translateY(100vh) rotate(360deg); }
         }
         
-        .quantum-dot {
-            position: absolute;
-            width: 0.3px;
-            height: 0.3px;
-            background: rgba(185, 242, 255, 0.8);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: quantumFloat 10s infinite ease-in-out;
-            filter: blur(0.2px);
-        }
-        
-        @keyframes quantumFloat {
-            0%, 100% { transform: translate(0, 0); opacity: 0.3; }
-            25% { transform: translate(20px, -20px); opacity: 0.8; }
-            50% { transform: translate(-10px, -40px); opacity: 0.5; }
-            75% { transform: translate(30px, -10px); opacity: 0.7; }
-        }
-        
-        /* NEBULA */
-        .nebula-cloud {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, 
-                rgba(255, 182, 193, 0.1) 0%,
-                rgba(185, 242, 255, 0.05) 30%,
-                transparent 70%);
-            border-radius: 50%;
-            filter: blur(40px);
-            animation: nebulaFloat 20s infinite ease-in-out;
-            opacity: 0.5;
-        }
-        
-        @keyframes nebulaFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(100px, 50px) scale(1.2); }
-            66% { transform: translate(-50px, 100px) scale(0.8); }
-        }
-        
-        /* CONTROLS */
+        /* CONTROLS - Simple and centered */
         .controls {
             position: absolute;
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 12px;
+            gap: 10px;
             z-index: 20;
-            width: 95%;
-            max-width: 800px;
-            flex-wrap: wrap;
+            width: 90%;
+            max-width: 500px;
             justify-content: center;
-            padding: 0 20px;
+            flex-wrap: wrap;
         }
         
         .control-btn {
-            background: rgba(255, 182, 193, 0.15);
+            background: rgba(255, 182, 193, 0.2);
             color: white;
             border: 1px solid rgba(255, 182, 193, 0.3);
             padding: 10px 20px;
@@ -319,186 +212,92 @@
             font-size: 0.9rem;
             transition: all 0.3s;
             backdrop-filter: blur(5px);
-            flex: 1;
-            min-width: 140px;
-            max-width: 160px;
+            min-width: 160px;
             text-align: center;
-            white-space: nowrap;
             min-height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .control-btn:active {
-            background: rgba(255, 182, 193, 0.25);
+            background: rgba(255, 182, 193, 0.3);
             transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(255, 182, 193, 0.2);
         }
         
-        /* STATS */
-        .stats {
+        /* HEART CONSTELLATION - Fixed positioning */
+        .heart-constellation {
             position: absolute;
-            top: 40px;
-            right: 40px;
-            color: white;
-            background: rgba(255, 182, 193, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 182, 193, 0.3);
-            font-size: 0.9rem;
-            max-width: 150px;
-            backdrop-filter: blur(5px);
-            z-index: 20;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+            z-index: 2;
+            pointer-events: none;
         }
         
-        .stats div {
-            margin: 5px 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .particle-count {
-            font-size: 1.5rem;
-            color: var(--light-pink);
-            font-weight: bold;
-        }
-        
-        /* SHARE BUTTON */
-        .share-btn {
+        .star-node {
             position: absolute;
-            top: 40px;
-            left: 40px;
-            background: rgba(255, 182, 193, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 182, 193, 0.3);
-            padding: 10px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            backdrop-filter: blur(5px);
-            z-index: 20;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            min-height: 44px;
-        }
-        
-        .share-btn:active {
-            background: rgba(255, 182, 193, 0.25);
-            transform: scale(0.95);
-        }
-        
-        /* LOADING SCREEN */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--dark-bg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            transition: opacity 0.5s ease-out;
-        }
-        
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(255, 182, 193, 0.3);
-            border-top-color: var(--pink);
+            width: 2px;
+            height: 2px;
+            background: #ff69b4;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
+            animation: nodePulse 2s infinite alternate;
         }
         
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        @keyframes nodePulse {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
         }
         
-        .loading-text {
-            color: var(--light-pink);
-            font-size: 1.2rem;
-            text-shadow: 0 0 10px var(--pink);
+        .star-connection {
+            position: absolute;
+            height: 1px;
+            background: rgba(255, 105, 180, 0.3);
+            transform-origin: left center;
+            animation: connectionGlow 3s infinite alternate;
         }
         
-        /* MOBILE ORIENTATION WARNING */
-        .orientation-warning {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--dark-bg);
-            z-index: 1000;
-            color: white;
+        @keyframes connectionGlow {
+            from { opacity: 0.1; width: 0; }
+            to { opacity: 0.5; width: var(--distance); }
+        }
+        
+        /* COSMIC MESSAGE */
+        .cosmic-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff69b4;
+            font-size: 2rem;
+            opacity: 0;
+            z-index: 3;
             text-align: center;
+            font-family: 'Georgia', serif;
+            width: 90%;
             padding: 20px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            transition: opacity 1s;
         }
         
-        .rotate-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            animation: rotatePhone 2s infinite;
-        }
-        
-        @keyframes rotatePhone {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(90deg); }
-        }
-        
-        @media (max-height: 500px) and (orientation: landscape) {
-            .orientation-warning { display: flex; }
-            .container { display: none; }
-        }
-        
-        /* MOBILE RESPONSIVE ADJUSTMENTS */
+        /* MOBILE ADJUSTMENTS */
         @media (max-width: 768px) {
             .controls {
                 bottom: 20px;
                 gap: 8px;
-                padding: 0 10px;
             }
             
             .control-btn {
-                min-width: 120px;
-                max-width: 140px;
-                font-size: 0.8rem;
-                padding: 8px 12px;
-            }
-            
-            .stats {
-                top: 20px;
-                right: 20px;
-                padding: 10px;
-                font-size: 0.8rem;
-            }
-            
-            .share-btn {
-                top: 20px;
-                left: 20px;
-                padding: 8px 12px;
-                font-size: 0.8rem;
+                min-width: 140px;
+                font-size: 0.85rem;
+                padding: 8px 16px;
             }
             
             .bad-dancer-container {
-                bottom: clamp(140px, 30vh, 160px);
+                bottom: 120px;
             }
             
             .love-message {
-                top: clamp(90px, 20vh, 120px);
-            }
-            
-            .title {
-                top: max(15px, 3vh);
+                font-size: clamp(1.8rem, 7vw, 2.5rem);
             }
         }
         
@@ -508,63 +307,39 @@
             }
             
             .control-btn {
-                min-width: 110px;
-                font-size: 0.75rem;
-                padding: 6px 10px;
+                min-width: 120px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
             }
             
-            .stats {
-                max-width: 120px;
-                padding: 8px;
-            }
-            
-            .share-btn {
-                padding: 6px 10px;
-            }
-            
-            .wave-card {
-                padding: 10px 14px;
+            .love-message {
+                top: 45%;
             }
         }
         
         @media (max-height: 600px) {
             .love-message {
-                top: 80px;
-                font-size: clamp(1.5rem, 5vw, 2rem);
+                top: 45%;
+                font-size: 2rem;
             }
             
             .bad-dancer-container {
-                bottom: 100px;
+                bottom: 110px;
             }
             
             .title {
-                top: 15px;
-                font-size: 1.2rem;
+                top: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-spinner"></div>
-        <div class="loading-text">Loading Stardust Snow...</div>
-    </div>
-    
-    <!-- Orientation Warning -->
-    <div class="orientation-warning" id="orientationWarning">
-        <div class="rotate-icon">📱</div>
-        <h2>Please Rotate Your Device</h2>
-        <p>For the best experience, please rotate your device to portrait mode.</p>
-    </div>
-    
-    <!-- Main Container -->
     <div class="container" id="mainContainer">
         <h1 class="title">Merry Christmas Babe ✨<br>
-            <span class="subtitle">TO THE MOON ❤️ AND BACK</span>
+            <span class="subtitle">To the moon ❤️ and back</span>
         </h1>
         
-        <div class="love-message">I Just Want To Say I Love You ❤️</div>
+        <div class="love-message">I Just Want To Say I Love You </div>
         
         <div class="bad-dancer-container">
             <div class="wave-card" onclick="openSong()">
@@ -580,128 +355,49 @@
             </div>
         </div>
         
-        <button class="share-btn" onclick="shareExperience()">
-            <span style="font-size: 1.2em;">🔗</span> Share
-        </button>
-        
         <div class="stardust-field" id="stardustField"></div>
         <div class="constellation" id="constellation"></div>
-        <div class="nebula-cloud" style="top: 20%; left: 20%;"></div>
-        <div class="nebula-cloud" style="top: 60%; left: 70%;"></div>
         <div class="heart-constellation" id="heartConstellation"></div>
         <div class="cosmic-message" id="cosmicMessage">You are my universe</div>
         
-        <div class="stats">
-            <div>Particles: <span class="particle-count" id="particleCount">0</span></div>
-            <div>Constellations: <span id="constellationCount">0</span></div>
-            <div>Quantum State: <span id="quantumState">♥</span></div>
-        </div>
-        
         <div class="controls">
             <button class="control-btn" onclick="increaseDust()">More Stardust ✨</button>
-            <button class="control-btn" onclick="decreaseDust()">Less Dust</button>
-            <button class="control-btn" onclick="createConstellation()">Form Constellation</button>
-            <button class="control-btn" onclick="revealHeart()">Reveal Heart 💫</button>
-            <button class="control-btn" onclick="quantumLeap()">Quantum Leap ⚡</button>
+            <button class="control-btn" onclick="revealHeart()">Reveal Heart 💖</button>
         </div>
     </div>
 
     <script>
-        // ========== FIX VIEWPORT HEIGHT FOR MOBILE ==========
-        function fixViewportHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        
-        fixViewportHeight();
-        window.addEventListener('resize', fixViewportHeight);
-        window.addEventListener('orientationchange', fixViewportHeight);
-        
         // ========== INITIALIZATION ==========
         let particles = [];
         let nodes = [];
         let connections = [];
-        let particleTotal = 0;
-        let constellationTotal = 0;
-        let dustIntensity = 50;
-        let resizeTimeout;
-        let isInitialized = false;
+        let isRevealingHeart = false;
         
         // DOM Elements
-        const loadingScreen = document.getElementById('loadingScreen');
         const mainContainer = document.getElementById('mainContainer');
         const stardustField = document.getElementById('stardustField');
         const constellation = document.getElementById('constellation');
         const heartConstellation = document.getElementById('heartConstellation');
         const cosmicMessage = document.getElementById('cosmicMessage');
-        const particleCount = document.getElementById('particleCount');
-        const constellationCount = document.getElementById('constellationCount');
-        const quantumState = document.getElementById('quantumState');
-        
-        // ========== LOADING & INITIALIZATION ==========
-        function hideLoading() {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-                mainContainer.style.opacity = '1';
-                if (!isInitialized) {
-                    initializeExperience();
-                    isInitialized = true;
-                }
-            }, 500);
-        }
-        
-        window.addEventListener('load', () => {
-            setTimeout(hideLoading, 800);
-        });
         
         // ========== CORE FUNCTIONS ==========
         function openSong() {
             window.open(
                 "https://www.youtube.com/watch?v=GZFKra1IXvs&t=88s",
-                "_blank",
-                "noopener,noreferrer"
+                "_blank"
             );
-        }
-        
-        function shareExperience() {
-            const shareData = {
-                title: '✨ Stardust Snow | Cosmic Love Experience',
-                text: 'Check out this beautiful interactive cosmic experience with stardust particles and love message!',
-                url: window.location.href
-            };
-            
-            if (navigator.share && navigator.canShare(shareData)) {
-                navigator.share(shareData)
-                    .then(() => console.log('Shared successfully'))
-                    .catch(err => console.log('Error sharing:', err));
-            } else {
-                navigator.clipboard.writeText(window.location.href)
-                    .then(() => {
-                        alert('Link copied to clipboard! 📋');
-                    })
-                    .catch(err => {
-                        prompt('Copy this link to share:', window.location.href);
-                    });
-            }
         }
         
         // ========== PARTICLE SYSTEM ==========
         const particleColors = [
-            '#ffb6c1', '#b9f2ff', '#ffffff', 
-            '#ffe6f2', '#e6f2ff', '#fffafa'
+            '#ffb6c1', // Light pink
+            '#b9f2ff', // Diamond blue
+            '#ffffff', // White
         ];
         
-        function getParticleDensity() {
-            const screenArea = window.innerWidth * window.innerHeight;
-            if (screenArea < 300000) return 0.5;
-            if (screenArea < 1000000) return 0.8;
-            return 1;
-        }
-        
-        function createStardust(isQuantum = false) {
+        function createStardust() {
             const particle = document.createElement('div');
-            particle.className = isQuantum ? 'quantum-dot' : 'stardust-particle';
+            particle.className = 'stardust-particle';
             
             // Position
             particle.style.left = Math.random() * 100 + '%';
@@ -710,97 +406,108 @@
             // Appearance
             const color = particleColors[Math.floor(Math.random() * particleColors.length)];
             particle.style.background = color;
-            particle.style.boxShadow = `0 0 3px ${color}`;
             
-            // Size based on density
-            const density = getParticleDensity();
-            const size = isQuantum ? 0.3 : 0.3 + Math.random() * 0.7 * density;
+            // Size
+            const size = 0.3 + Math.random() * 0.7;
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
             
             // Animation
-            if (!isQuantum) {
-                particle.style.animationDuration = (10 + Math.random() * 20) + 's';
-                particle.style.animationDelay = (Math.random() * 5) + 's';
-            } else {
-                particle.style.animationDelay = (Math.random() * 10) + 's';
-            }
+            const duration = 10 + Math.random() * 20;
+            particle.style.animationDuration = duration + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
             
             // Add to DOM
             stardustField.appendChild(particle);
             
-            if (!isQuantum) {
-                particleTotal++;
-                particleCount.textContent = particleTotal;
-            }
-            
             // Auto-remove
-            const lifespan = isQuantum ? 15000 : 30000;
             setTimeout(() => {
                 if (particle.parentNode) {
                     particle.remove();
-                    if (!isQuantum) {
-                        particleTotal--;
-                        particleCount.textContent = particleTotal;
-                        if (Math.random() > 0.3) {
-                            setTimeout(() => createStardust(), 100);
-                        }
-                    } else {
-                        createStardust(true);
+                    // Create new particle
+                    if (Math.random() > 0.3) {
+                        setTimeout(() => createStardust(), 100);
                     }
                 }
-            }, lifespan);
+            }, 30000);
             
             particles.push(particle);
             return particle;
         }
         
-        // ========== TOUCH HANDLING ==========
-        let lastTouchTime = 0;
-        const TOUCH_DELAY = 300;
-        
-        document.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            const currentTime = Date.now();
-            if (currentTime - lastTouchTime > TOUCH_DELAY) {
-                const touch = e.touches[0];
-                if (touch && Math.random() > 0.7) {
-                    createParticleAt(touch.clientX, touch.clientY);
-                    lastTouchTime = currentTime;
-                }
-            }
-        }, { passive: false });
-        
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() > 0.9) {
-                createParticleAt(e.clientX, e.clientY);
-            }
-        });
-        
-        function createParticleAt(x, y) {
-            const particle = createStardust(Math.random() > 0.7);
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            particle.style.animationDuration = '1s';
-        }
-        
-        // ========== CONSTELLATION SYSTEM ==========
-        function createStarNode(x, y, isHeart = false) {
-            const node = document.createElement('div');
-            node.className = 'star-node';
-            node.style.left = x + 'px';
-            node.style.top = y + 'px';
+        // ========== HEART CONSTELLATION ==========
+        function createHeartConstellation() {
+            if (isRevealingHeart) return;
+            isRevealingHeart = true;
             
-            if (isHeart) {
-                node.style.background = '#ff69b4';
-                node.style.boxShadow = '0 0 10px #ff69b4';
-                node.style.width = '2px';
-                node.style.height = '2px';
+            // Clear any existing constellation
+            heartConstellation.innerHTML = '';
+            
+            // Heart shape parameters
+            const heartNodes = [];
+            const centerX = 100;
+            const centerY = 100;
+            const pointCount = 20;
+            
+            // Create heart nodes
+            for (let i = 0; i < pointCount; i++) {
+                const angle = (i / pointCount) * Math.PI * 2;
+                const t = angle;
+                
+                // Heart parametric equation
+                const x = 16 * Math.pow(Math.sin(t), 3);
+                const y = -(13 * Math.cos(t) - 
+                           5 * Math.cos(2*t) - 
+                           2 * Math.cos(3*t) - 
+                           Math.cos(4*t));
+                
+                const scale = 4;
+                const nodeX = centerX + x * scale;
+                const nodeY = centerY + y * scale;
+                
+                const node = document.createElement('div');
+                node.className = 'star-node';
+                node.style.left = nodeX + 'px';
+                node.style.top = nodeY + 'px';
+                node.style.animationDelay = i * 0.1 + 's';
+                
+                heartConstellation.appendChild(node);
+                heartNodes.push({ x: nodeX, y: nodeY, element: node });
             }
             
-            constellation.appendChild(node);
-            nodes.push({ element: node, x: x, y: y });
-            return node;
+            // Create connections between nodes
+            for (let i = 0; i < heartNodes.length; i++) {
+                const next = (i + 1) % heartNodes.length;
+                createConnection(heartNodes[i], heartNodes[next]);
+            }
+            
+            // Show heart constellation
+            heartConstellation.style.opacity = '1';
+            heartConstellation.style.transition = 'opacity 1s ease';
+            
+            // Show cosmic message
+            setTimeout(() => {
+                cosmicMessage.style.opacity = '1';
+                cosmicMessage.style.transition = 'opacity 1s ease';
+            }, 500);
+            
+            // Make particles move toward heart
+            particles.forEach((particle, index) => {
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.style.transition = 'all 2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                        particle.style.left = '50%';
+                        particle.style.top = '50%';
+                        particle.style.transform = 'scale(2)';
+                        particle.style.background = '#ff69b4';
+                    }
+                }, index * 50);
+            });
+            
+            // Reset after animation
+            setTimeout(() => {
+                isRevealingHeart = false;
+            }, 3000);
         }
         
         function createConnection(node1, node2) {
@@ -815,236 +522,70 @@
             connection.style.top = node1.y + 'px';
             connection.style.setProperty('--distance', distance + 'px');
             connection.style.transform = `rotate(${angle}deg)`;
-            connection.style.animationDelay = (Math.random() * 2) + 's';
+            connection.style.animationDelay = Math.random() * 2 + 's';
             
-            constellation.appendChild(connection);
+            heartConstellation.appendChild(connection);
             connections.push(connection);
+            
             return connection;
-        }
-        
-        function createRandomConstellation() {
-            // Clear previous
-            nodes.forEach(node => node.element.remove());
-            connections.forEach(conn => conn.remove());
-            nodes = [];
-            connections = [];
-            
-            // Create nodes
-            const nodeCount = Math.min(15, 10 + Math.floor(Math.random() * 10));
-            const centerX = window.innerWidth / 2;
-            const centerY = window.innerHeight / 2;
-            const radius = Math.min(200, 150 + Math.random() * 100);
-            
-            for (let i = 0; i < nodeCount; i++) {
-                const angle = (i / nodeCount) * Math.PI * 2;
-                const variation = Math.random() * 50 - 25;
-                const x = centerX + Math.cos(angle) * (radius + variation);
-                const y = centerY + Math.sin(angle) * (radius + variation);
-                createStarNode(x, y);
-            }
-            
-            // Create connections
-            for (let i = 0; i < nodes.length; i++) {
-                for (let j = i + 1; j < nodes.length; j++) {
-                    if (Math.random() > 0.7) {
-                        createConnection(nodes[i], nodes[j]);
-                    }
-                }
-            }
-            
-            // Update stats
-            constellationTotal++;
-            constellationCount.textContent = constellationTotal;
-            const states = ['♥', '✨', '⚡', '💫', '🌌'];
-            quantumState.textContent = states[constellationTotal % states.length];
-        }
-        
-        function createHeartConstellation() {
-            heartConstellation.innerHTML = '';
-            const heartNodes = [];
-            const centerX = 100;
-            const centerY = 100;
-            const pointCount = 20;
-            
-            for (let i = 0; i < pointCount; i++) {
-                const angle = (i / pointCount) * Math.PI * 2;
-                const t = angle;
-                const x = 16 * Math.pow(Math.sin(t), 3);
-                const y = -(13 * Math.cos(t) - 5 * Math.cos(2*t) - 2 * Math.cos(3*t) - Math.cos(4*t));
-                
-                const scale = 4;
-                const nodeX = centerX + x * scale;
-                const nodeY = centerY + y * scale;
-                
-                const node = document.createElement('div');
-                node.className = 'star-node';
-                node.style.left = nodeX + 'px';
-                node.style.top = nodeY + 'px';
-                node.style.background = '#ff69b4';
-                node.style.boxShadow = '0 0 15px #ff69b4';
-                node.style.width = '3px';
-                node.style.height = '3px';
-                node.style.animationDelay = i * 0.1 + 's';
-                
-                heartConstellation.appendChild(node);
-                heartNodes.push({ x: nodeX, y: nodeY, element: node });
-            }
-            
-            // Create heart connections
-            for (let i = 0; i < heartNodes.length; i++) {
-                const next = (i + 1) % heartNodes.length;
-                createConnection(heartNodes[i], heartNodes[next]);
-            }
-            
-            heartConstellation.style.opacity = '1';
         }
         
         // ========== CONTROL FUNCTIONS ==========
         window.increaseDust = function() {
-            dustIntensity = Math.min(100, dustIntensity + 10);
-            const density = getParticleDensity();
-            const count = Math.floor(20 * density);
-            
-            for (let i = 0; i < count; i++) {
-                setTimeout(() => createStardust(), i * 50);
-            }
-            
-            for (let i = 0; i < Math.floor(10 * density); i++) {
-                setTimeout(() => createStardust(true), i * 100);
-            }
-        };
-        
-        window.decreaseDust = function() {
-            dustIntensity = Math.max(10, dustIntensity - 10);
-            const allParticles = document.querySelectorAll('.stardust-particle');
-            const removeCount = Math.min(30, allParticles.length);
-            
-            for (let i = 0; i < removeCount; i++) {
-                if (allParticles[i]) {
-                    allParticles[i].remove();
-                    particleTotal--;
-                    particleCount.textContent = particleTotal;
-                }
-            }
-        };
-        
-        window.createConstellation = function() {
-            createRandomConstellation();
-            const density = getParticleDensity();
-            const burstCount = Math.floor(50 * density);
-            
-            for (let i = 0; i < burstCount; i++) {
+            // Add more particles
+            for (let i = 0; i < 20; i++) {
                 setTimeout(() => {
-                    const particle = createStardust();
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.animationDuration = '2s';
-                }, i * 30);
+                    createStardust();
+                }, i * 50);
             }
         };
         
         window.revealHeart = function() {
             createHeartConstellation();
-            cosmicMessage.style.opacity = '1';
-            
-            particles.forEach((particle, index) => {
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.style.transition = 'all 2s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-                        particle.style.left = '50%';
-                        particle.style.top = '50%';
-                        particle.style.transform = 'scale(2)';
-                        particle.style.background = '#ff69b4';
-                        particle.style.boxShadow = '0 0 20px #ff69b4';
-                    }
-                }, index * 50);
-            });
-        };
-        
-        window.quantumLeap = function() {
-            const density = getParticleDensity();
-            const showerCount = Math.floor(100 * density);
-            
-            for (let i = 0; i < showerCount; i++) {
-                setTimeout(() => {
-                    const particle = createStardust(true);
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.animationDuration = '0.5s';
-                    particle.style.background = i % 2 === 0 ? '#ff69b4' : '#b9f2ff';
-                }, i * 20);
-            }
-            
-            quantumState.textContent = '⚡⚡⚡';
         };
         
         // ========== INITIALIZE EXPERIENCE ==========
         function initializeExperience() {
-            // Initial particles
-            const density = getParticleDensity();
-            const initialCount = Math.floor(100 * density);
-            
-            for (let i = 0; i < initialCount; i++) {
-                setTimeout(() => createStardust(i % 5 === 0), i * 50);
+            // Create initial stardust
+            for (let i = 0; i < 80; i++) {
+                setTimeout(() => {
+                    createStardust();
+                }, i * 100);
             }
-            
-            // Quantum dots
-            for (let i = 0; i < Math.floor(20 * density); i++) {
-                createStardust(true);
-            }
-            
-            // Auto constellations
-            setInterval(() => {
-                if (Math.random() > 0.7) createRandomConstellation();
-            }, 15000);
         }
         
         // ========== EVENT HANDLERS ==========
-        // Resize handler
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                fixViewportHeight();
-                if (isInitialized) {
-                    createHeartConstellation();
-                }
-            }, 250);
-        });
-        
-        // Click to create star
-        document.addEventListener('click', (e) => {
-            if (!isInitialized) return;
-            createStarNode(e.clientX, e.clientY);
-            
-            nodes.forEach(node => {
-                const dx = e.clientX - node.x;
-                const dy = e.clientY - node.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 200 && Math.random() > 0.5) {
-                    createConnection({ x: e.clientX, y: e.clientY }, node);
-                }
-            });
-        });
-        
-        // ========== ORIENTATION CHECK ==========
-        function checkOrientation() {
-            const warning = document.getElementById('orientationWarning');
-            const isLandscape = window.innerWidth > window.innerHeight;
-            const isSmallScreen = window.innerHeight <= 500;
-            
-            if (isLandscape && isSmallScreen) {
-                warning.style.display = 'flex';
-                mainContainer.style.display = 'none';
-            } else {
-                warning.style.display = 'none';
-                mainContainer.style.display = 'block';
+        // Mouse interaction - create particles on move
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.9) {
+                const particle = createStardust();
+                particle.style.left = e.clientX + 'px';
+                particle.style.top = e.clientY + 'px';
+                particle.style.animationDuration = '1s';
             }
-        }
+        });
         
-        window.addEventListener('resize', checkOrientation);
-        window.addEventListener('orientationchange', checkOrientation);
-        checkOrientation();
+        // Touch interaction
+        let lastTouchTime = 0;
+        document.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const currentTime = Date.now();
+            if (currentTime - lastTouchTime > 300) {
+                const touch = e.touches[0];
+                if (touch && Math.random() > 0.7) {
+                    const particle = createStardust();
+                    particle.style.left = touch.clientX + 'px';
+                    particle.style.top = touch.clientY + 'px';
+                    particle.style.animationDuration = '1s';
+                    lastTouchTime = currentTime;
+                }
+            }
+        }, { passive: false });
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initializeExperience();
+        });
         
         // ========== PREVENT ZOOM ON MOBILE ==========
         document.addEventListener('touchstart', function(e) {
